@@ -17,7 +17,7 @@ signinForm.addEventListener('submit', async e => {
     const modal = bootstrap.Modal.getInstance(document.querySelector('#SigninModal'))
     modal.hide()
 
-    showMessage('Welcome ' + credentials.user.email)
+    showMessage('Welcome ' + credentials.user.email)  //  Funcion para darle la bienvenida al usuario.
 
     } catch (error) {
         if (error.code === "auth/wrong-password") {
