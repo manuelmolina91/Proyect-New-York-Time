@@ -7,24 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to New York Times</title>
     <link rel="stylesheet" href="../Styles/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">  <!--Bootstrap-->
     <link rel="stylesheet" href="../Styles/index.css">
     <link rel="stylesheet" href="../Styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">  <!--Toastify-->
     <script src="./Services/main.js" type="module"></script>
-
 </head>
 
 <body>
 
-    <!--<nav id="nav">
-        <a href="navLogin" class="loggedOut">Login</a>
-        <a href="navRegister" class="loggedOut">Register</a>
-        <a onclick="" id="logout" class="loggedIn">Log Out</a>
-    </nav>-->
-
     <div id="">
-
-    <h1>New York Times</h1>
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">    <!--Con bg-dark y navbar-dark agregamos el color al menu del navegador-->
         <div class="container">
@@ -34,11 +26,14 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">   <!--Agregamos ms-auto que es una abreviatura de margin start auto-->
-              <li class="nav-item">
+              <li class="nav-item logged-out">
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#SigninModal">Signin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#SignupModal">Signup</a>
+                <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#SignupModal">Signup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link logged-in" href="#" id="logout">Logout</a>
               </li>
             </ul>
           </div>
@@ -48,33 +43,27 @@
       <!-- Signin Modal -->
     <div class="modal fade" id="SigninModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">   <!--Aqui podemos cambiar el color del mensaje escribiendo bg-seguidos del color que queramos-->
+        <div class="modal-content bg-dark">   <!--Aqui podemos cambiar el color del mensaje escribiendo bg-seguidos del color que queramos-->
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>   <!--Aqui podemos añadir o quitar un titulo-->
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Signin</h1>   <!--Aqui podemos añadir o quitar un titulo-->
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 
-                <form action="">
-
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control mb-3" placeholder="Username" required>
-
+                <form id="signin-form">
+                  
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control mb-3" placeholder="Email" required>
+                    <input type="email" id="login-email" class="form-control mb-3" placeholder="Email" required>
 
                     <label for="password">Password:</label>
-                    <input type="password" class="form-control mb-3" placeholder="Password" required>
+                    <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
 
-                    <label for="confirm password">Confirm Password:</label>
-                    <input type="password" class="form-control mb-3" placeholder="Confirm Password" required>
+                    <button type="submit" class="btn btn-primary">
+                      Login
+                    </button>
 
                 </form>
             
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
             </div>
         </div>
         </div>
@@ -85,45 +74,32 @@
         <div class="modal-dialog">
         <div class="modal-content bg-dark">   <!--Aqui podemos cambiar el color del mensaje escribiendo bg-seguidos del color que queramos-->
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>   <!--Aqui podemos añadir o quitar un titulo-->
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Signup</h1>   <!--Aqui podemos añadir o quitar un titulo-->
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 
-                <form action="">
+                <form id="signup-form">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control mb-3" placeholder="Email" required>
+                    <input type="email" id="signup-email" class="form-control mb-3" placeholder="Email" required>
 
                     <label for="password">Password:</label>
-                    <input type="password" class="form-control mb-3" placeholder="Password" required>
+                    <input type="password" id="signup-password" class="form-control mb-3" placeholder="Password" required>
+
+                  <button type="submit" class="btn btn-primary">
+                    Register
+                  </button>
                 </form>
             
             </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
         </div>
         </div>
     </div>
-
-    <form>
-        <div id="login">
-            <p>
-                <input id="email" type="email" placeholder="Insert your email" required>
-            </p>
-            <br>
-            <p>
-                <input id="password" type="password" placeholder="Insert your password" required>
-            </p>
-        </div>
-        <br><br>
-        <input id="buttonLogin" type="submit" value="Login">
-
-    </form>
     </div>
     <!--Con este script conseguimos que el menu sea funcional en pantalla movil-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Toastify JS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </body>
 
