@@ -20,4 +20,6 @@ facebookButton.addEventListener('click', async () => {
     } catch (error) {
         console.log(error)
     }
+
+    location = '../views/dashboard.html'
 })

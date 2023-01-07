@@ -6,4 +6,8 @@ const logout = document.querySelector('#logout')
 logout.addEventListener('click', async () => {
     await signOut(auth)
     console.log("user signed out")
+
+    if (!document.URL.includes("index")){
+            window.location.replace("../index.html");
+    }
 })

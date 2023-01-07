@@ -22,7 +22,9 @@ signupForm.addEventListener('submit',  async (e) => {  //  Vamos a "escuchar" al
 
         showMessage("Welcome " + userCreate.user.email)  //  Le damos la bienvenida al nuevo usuario y lanzamos el success.
 
-        //location = '../views/dashboard.html'
+        location = '../views/dashboard.html'
+
+        
 
     }   catch (error) {
 

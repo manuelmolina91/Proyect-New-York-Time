@@ -19,6 +19,8 @@ signinForm.addEventListener('submit', async e => {
 
     showMessage('Welcome ' + credentials.user.email)  //  Funcion para darle la bienvenida al usuario.
 
+    location = '../views/dashboard.html'
+
     } catch (error) {
         if (error.code === "auth/wrong-password") {
             showMessage('Wrong-password', 'error')

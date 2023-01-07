@@ -13,10 +13,8 @@
     <link rel="stylesheet" href="../Styles/details.css">
     <link rel="stylesheet" href="../Styles/footer.css">
     <link rel="stylesheet" href="../Styles/vanish.css">
-    <link rel="stylesheet" href="../views/dashboard.html">
-    <link rel="stylesheet" href="../views/details.html">
-
-
+    <link rel="stylesheet" href="../Styles/nav.css">
+    <script src="../Services/logout.js" type="module"></script>
     <title>Document</title>
 
 </head>
@@ -24,12 +22,21 @@
 <body>
 
     <header id="tituloWeb">
+        <div id="userEmail"></div>
 
         <h1>NEW YORK TIMES</h1>
 
         <br>
 
         <p id="best">BEST SELLERS</p>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">   <!--Agregamos ms-auto que es una abreviatura de margin start auto-->
+              <li class="nav-item">
+                <a class="nav-link logged-in" href="#" id="logout">Logout</a>
+              </li>
+            </ul>
+        </div>
 
 
     </header>
@@ -41,15 +48,18 @@
         </div>
     </div>
 
+
     <div class="lds-hourglass" id="spinner"></div>
+
+    
 
     <div id="allListBooks" class="hidden"></div>
 
     <footer id="footer">
         <div class="social">
-            <a href="#"><img src="../Img/icons8-noticias-de-ee.-uu.-48.png" alt="newsNewYork"></a>
-            <a href="#"><img src="../Img/icons8-rascacielos-48.png" alt="skyscraper"></a>
-            <a href="#"><img src="../Img/icons8-repositorio-48.png" alt="book"></a>
+            <a href="#"><img src="../Assets/icons8-noticias-de-ee.-uu.-48.png" alt="newsNewYork"></a>
+            <a href="#"><img src="../Assets/icons8-rascacielos-48.png" alt="skyscraper"></a>
+            <a href="#"><img src="../Assets/icons8-repositorio-48.png" alt="book"></a>
         </div>
         <div class="container">
             <p class="copy">© 2022 Manuel/ Todos los derechos reservados</p>

@@ -11,9 +11,4 @@ import './logout.js'
 
 onAuthStateChanged(auth, async (user) => {  //  Con esta funcion la aplicacion sabe si estas conectado o no.
     loginCheck(user)
-    //if (user) {
-    //    loginCheck(user)
-    //} else {
-    //    loginCheck(user)
-    //}
 })

@@ -4,16 +4,16 @@ const prueba = allBooks.appendChild(document.createElement('div')) // Le añado 
 prueba.setAttribute("id", "listBooks") // Con este metodo le añado un atributo al DIV con ID
 prueba.setAttribute("class", "listBooks")
 
-
 async function postAllData() {
 
-        const postAllListBooks = document.getElementById('listBooks')
+        const postAllListBooks = document.getElementById('listBooks')  //  Llamamos a la API y esta nos devuelve un array de libros
         const list = await fetchListBooks()
 
 
         spinnerElement.setAttribute('class', 'hidden')
         allBooks.removeAttribute('class', 'hidden')
 
+    //  Recorremos todos los libros y pintamos en el DOM los elementos HTML
         for (let i = 0; i < list.length; i++) {
 
                 const item = list[i]

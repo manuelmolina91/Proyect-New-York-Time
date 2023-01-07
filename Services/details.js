@@ -19,6 +19,7 @@ async function callBookDetails() {
     listNameBook.setAttribute("id", "listBookName")
     listNameBook.innerText = selectedListName
 
+  //  Recorremos todos los libros y pintamos en el DOM los detalles de cada libro-
 
     for (const book of bookDetails.results.books) {
 
@@ -57,7 +58,7 @@ async function callBookDetails() {
         buttonAmazon.setAttribute("href", buyAmazon)
         const buttonImgElement = document.createElement('img')
         buttonImgElement.setAttribute("id", "amazonPic")
-        buttonImgElement.setAttribute('src', '../Img/icons8-amazon-120.png')
+        buttonImgElement.setAttribute('src', '../Assets/icons8-amazon-120.png')
 
         buttonAmazon.innerText = buttonAmazonText
         buttonAmazon.appendChild(buttonImgElement)
