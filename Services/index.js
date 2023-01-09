@@ -14,6 +14,10 @@ async function postAllData() {
         allBooks.removeAttribute('class', 'hidden')
 
     //  Recorremos todos los libros y pintamos en el DOM los elementos HTML
+        /**
+         * Corrección
+         * Debemos usar un For..Of
+         */
         for (let i = 0; i < list.length; i++) {
 
                 const item = list[i]
