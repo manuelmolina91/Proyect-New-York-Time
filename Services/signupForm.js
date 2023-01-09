@@ -9,7 +9,10 @@ signupForm.addEventListener('submit',  async (e) => {  //  Vamos a "escuchar" al
 
     const email = signupForm['signup-email'].value
     const password = signupForm['signup-password'].value  //  En las lineas 6 y 7 declaramos dos constantes y extraemos su valor.
-
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(email, password)
 
     try {
@@ -27,7 +30,10 @@ signupForm.addEventListener('submit',  async (e) => {  //  Vamos a "escuchar" al
         
 
     }   catch (error) {
-
+        /**
+         * Corrección
+         * Debemos usar un Switch
+         */
         //  Con estos condicionales hacemos que nos muestre el error por pantalla.
         if (error.code === 'auth/email-already-in-use') {
             showMessage("Email already in use", "error")

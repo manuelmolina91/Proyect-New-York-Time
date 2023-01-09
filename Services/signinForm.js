@@ -22,6 +22,10 @@ signinForm.addEventListener('submit', async e => {
     location = '../views/dashboard.html'
 
     } catch (error) {
+        /**
+         * Corrección
+         * Debemos usar un Switch
+         */
         if (error.code === "auth/wrong-password") {
             showMessage('Wrong-password', 'error')
         } else if (error.code === "auth/user-not-found") {

@@ -14,6 +14,10 @@ async function callBookDetails() {
     bookDetailsInfo.removeAttribute('class', 'hidden')
 
 
+    /**
+     * Corrección
+     * Esta variable no se usa
+     */
     const postAllDetails = document.getElementById('listNames')
     const listNameBook = document.createElement('h4')
     listNameBook.setAttribute("id", "listBookName")
@@ -21,6 +25,10 @@ async function callBookDetails() {
 
   //  Recorremos todos los libros y pintamos en el DOM los detalles de cada libro-
 
+    /**
+     * Corrección
+     * Deberíamos usar un FOR..OF
+     */
     for (const book of bookDetails.results.books) {
 
         const postBookDetails = document.getElementById('bookDetails')
